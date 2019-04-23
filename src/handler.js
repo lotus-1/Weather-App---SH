@@ -20,7 +20,6 @@ const handlerPublic = (request, response, url) => {
     html: "text/html",
     js: "application/javascript",
     css: "text/css"
-    // jpg : 'image/jpeg'
   };
   const filePath = path.join(__dirname, "..", url);
   fs.readFile(filePath, (error, file) => {
@@ -33,16 +32,11 @@ const handlerPublic = (request, response, url) => {
       response.end(file);
     }
   });
-
-  // } else if (url.indexOf('/search') !== -1) {
-  //     console.log('we are in the search');
-  //     handler.filterdkeys();
-  //     response.end('youre in the search');
-  //
-  // } else {
-  //  response.writeHead(404, { 'Content-Type' : 'text/html' });
-  //  response.end('<h1> 404 Not Found </h1>');
 };
+
+// const handlerSearch = (request, response) => {
+//   const urlApi = 'https://api.openweathermap.org/data/2.5/weather?q=' + searchValue + '&appid=a49f14d796546be21979a6946c7b5826';
+// }
 
 module.exports = {
   handlerHome,

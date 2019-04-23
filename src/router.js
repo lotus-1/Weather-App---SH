@@ -9,7 +9,11 @@ const router = (request, response) => {
     handler.handlerHome(request,response);
   } else if (url.indexOf('./public') !== -1) {
     handler.handlerPublic(request, response, url);
-  } else {
+  }
+  // else if (url.indexOf('./search') !== -1) {
+  //
+  // }
+  else {
     response.writeHead(404, { 'Content-Type': 'text/html'});
     response.end('<h1>404 NOT FOUND </h1>')
   }
