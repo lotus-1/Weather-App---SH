@@ -1,18 +1,23 @@
-const inputValue = document.getElementById('search').value;
+document.getElementById('button').addEventListener('click', function(e) {
+  e.preventDefault();
+  fetchData();
+});
 
-const getInputValue = (event) => {
-  event.preventDefault();
-};
-
-document.getElementById('button').addEventListener('click', getInputValue);
-
-function fetchData(inputValue) {
-  fetch('/search' + inputValue)
+function fetchData() {
+  const inputValue = document.getElementById('search').value;
+  console.log('input:', inputValue);
+  fetch('/search?city=' + inputValue)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
        console.log(data);
+       var para = document.createElement("p");
+       var node = document.createTextNode(data);
+       para.appendChild(node);
+
+       var element = document.getElementById("temp");
+       element.appendChild(para);
     })
     .catch((err) => {
       console.log(err);
