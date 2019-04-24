@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Give us the weather for any city the user type..",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "request": "^2.88.0"
+  },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",

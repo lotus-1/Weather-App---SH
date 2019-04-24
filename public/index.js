@@ -1,9 +1,20 @@
-const searchValue = document.getElementById("search").value;
-document.getElementById("button").addEventListener("click", getSearchValue);
+const inputValue = document.getElementById('search').value;
 
-const getSearchValue = (event) => {
+const getInputValue = (event) => {
   event.preventDefault();
-  // fetch(searchValue)
-}
+};
 
-// fetch()
+document.getElementById('button').addEventListener('click', getInputValue);
+
+function fetchData(inputValue) {
+  fetch('/search' + inputValue)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+       console.log(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
