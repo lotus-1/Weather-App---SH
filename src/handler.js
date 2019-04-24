@@ -50,18 +50,18 @@ const handlerSearch = (reqt, res) => {
   console.log(searchParse);
   const searchValue = querystring.parse(searchParse);
   console.log(searchValue);
-  const myUrlApi = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=a49f14d796546be21979a6946c7b5826`;
+  const myUrlApi = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue.city}&appid=a49f14d796546be21979a6946c7b5826`;
   request(myUrlApi, (err, response, body) => {
     const parsedBody = JSON.parse(body);
-      console.log('parsedBody is', parsedBody.data);
+    console.log('parsedBody is', parsedBody.data);
     if (err) {
       response.writeHead(404, { 'Content-Type': 'text/html' });
       response.end("Sorry, it's error");
     } else {
-
+      // let temp = parsedBody.coord.lon;
+      // console.log('the temp is', temp);
       res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end("this is search end");
-      // let
+      res.end(`${parsedBody.coord.lon}`);
     }
   });
 };
