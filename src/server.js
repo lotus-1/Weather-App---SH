@@ -6,7 +6,7 @@ const hostname = 'localhost';
 
 
 
-const server = http.createServer(handler);
+const server = http.createServer(router);
 server.listen(port, function() {
   console.log(`Server running on http://${hostname}:${port}`);
 });
