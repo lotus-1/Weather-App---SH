@@ -29,3 +29,6 @@ WeatherApp-SH give you the temperature in any city you search.
     * test.js
 
 If we had more time we prefer to add method to convert the Fahrenheit to Celsius. :partly_sunny:
+
+**Architecture**
+![](public/assets/Screenshot from 2019-04-25 09-58-12.png)

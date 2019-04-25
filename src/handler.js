@@ -25,8 +25,7 @@ const handlerPublic = (request, response) => {
     html: 'text/html',
     js: 'application/javascript',
     css: 'text/css',
-    jpg: 'image/jpeg',
-    png: 'images/bg.png'
+    jpg: 'image/jpg',
   };
   const filePath = path.join(__dirname, '..', url);
   console.log(filePath);
