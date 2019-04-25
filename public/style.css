@@ -3,7 +3,7 @@ body {
   background-repeat: no-repeat;
   background-origin: fixed;
   background-size: cover;
-  padding: 25px 50px 75px 100px;
+  text-align: center;
 }
 h1 {
   color: #00004d;
@@ -11,19 +11,25 @@ h1 {
 }
 
 .input{
-  width: 50%;
-  text-align: center;
+  width: 40%;
   height: 60px;
   border: 2px solid #ccc;
   box-sizing: border-box;
   border-radius: 10px;
   font-size: 24px;
   color: #00004d;
+  text-align: center;
 }
 .icon {
   width: 12%;
 }
-
+.footer {
+  padding: 5%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: fantasy;
+  margin-bottom: 50px;
+}
 /*input {
   width: 70%;
   max-width: 550px;
