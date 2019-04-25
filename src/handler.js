@@ -32,7 +32,6 @@ const handlerPublic = (request, response) => {
   console.log(filePath);
   fs.readFile(filePath, (error, file) => {
     if (error) {
-        console.log(error);
       response.writeHead(404, { 'Content-Type': 'text/html' });
       response.end("<h1> So sorry, I can't find this file...</h1>");
     } else {
@@ -43,23 +42,16 @@ const handlerPublic = (request, response) => {
 };
 
 const handlerSearch = (reqt, res) => {
-  console.log (reqt.url);
   const searchUrl = url.parse(reqt.url);
-  console.log('searchUrl is : ', searchUrl);
   const searchParse = searchUrl.query;
-  console.log(searchParse);
   const searchValue = querystring.parse(searchParse);
-  console.log(searchValue);
   const myUrlApi = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue.city}&appid=a49f14d796546be21979a6946c7b5826`;
   request(myUrlApi, (err, response, body) => {
     const parsedBody = JSON.parse(body);
-    console.log('parsedBody is', parsedBody.data);
     if (err) {
       response.writeHead(404, { 'Content-Type': 'text/html' });
       response.end("Sorry, it's error");
     } else {
-      // let temp = parsedBody.coord.lon;
-      // console.log('the temp is', temp);
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(`${parsedBody.coord.lon}`);
     }
