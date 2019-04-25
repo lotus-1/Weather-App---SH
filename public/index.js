@@ -5,19 +5,17 @@ document.getElementById('button').addEventListener('click', function(e) {
 
 function fetchData() {
   const inputValue = document.getElementById('search').value;
-  console.log('input:', inputValue);
   fetch('/search?city=' + inputValue)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-       console.log(data);
-       var pargraph = document.createElement("p");
-       var newNode = document.createTextNode('The temperature now is : ' + data);
-       pargraph.appendChild(newNode);
+       var addPargraph = document.createElement("p");
+       var addNewNode = document.createTextNode('The temperature now in fahrenheit : ' + data);
+       addPargraph.appendChild(addNewNode);
 
        var newElement = document.getElementById("temp");
-       newElement.appendChild(pargraph);
+       newElement.appendChild(addPargraph);
     })
     .catch((err) => {
       console.log(err);

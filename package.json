@@ -4,7 +4,10 @@
   "description": "Give us the weather for any city the user type..",
   "main": "index.js",
   "dependencies": {
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "supertest": "^4.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.10.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -13,7 +16,7 @@
     "nodemon": "^1.18.11"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test.js | tap-spec",
     "server": "nodemon src/server.js"
   },
   "repository": {
