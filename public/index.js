@@ -12,12 +12,12 @@ function fetchData() {
     })
     .then((data) => {
        console.log(data);
-       var para = document.createElement("p");
-       var node = document.createTextNode('The temperature now is : ' + data);
-       para.appendChild(node);
+       var pargraph = document.createElement("p");
+       var newNode = document.createTextNode('The temperature now is : ' + data);
+       pargraph.appendChild(newNode);
 
-       var element = document.getElementById("temp");
-       element.appendChild(para);
+       var newElement = document.getElementById("temp");
+       newElement.appendChild(pargraph);
     })
     .catch((err) => {
       console.log(err);
