@@ -10,12 +10,8 @@ function fetchData() {
       return response.json();
     })
     .then((data) => {
-       var addPargraph = document.createElement("p");
-       var addNewNode = document.createTextNode('The temperature now in fahrenheit : ' + data);
-       addPargraph.appendChild(addNewNode);
+      document.getElementById("temp").textContent = ('The temperature now in fahrenheit : ' + data);
 
-       var newElement = document.getElementById("temp");
-       newElement.appendChild(addPargraph);
     })
     .catch((err) => {
       console.log(err);
