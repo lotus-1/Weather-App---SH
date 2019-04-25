@@ -13,7 +13,7 @@ function fetchData() {
     .then((data) => {
        console.log(data);
        var para = document.createElement("p");
-       var node = document.createTextNode(data);
+       var node = document.createTextNode('The temperature now is : ' + data);
        para.appendChild(node);
 
        var element = document.getElementById("temp");
